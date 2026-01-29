@@ -9,5 +9,7 @@
 - n/a
 ### 4. Have the user pick a option to go against the computer
 - If the option the user picked lost against the computer make it say "[option you picked loses against the computer]" or something like that
+  - the else in what is listed below is the losing conditional.
 - If the option the user picked wins against the compute make it say "[option you picked won against the computer]" or something like that
+  - use if, else if, else statement
 
