@@ -22,22 +22,26 @@
   - Round 1
   - User plays Paper
   - CPU plays Lizard
-  - CPU gains 1 point
+  - Computer says CPU gains 1 point and now has a score of 1
   - Round 2
   - User plays Spock
   - CPU plays Scissors
-  - User gains 1 point
+  - Computer says User gains 1 point and now has a score of 1
   - Round 3
   - User plays Rock
   - CPU plays Paper
-  - CPU gains 1 point and now has a score of 2
+  - Computer says CPU gains 1 point and now has a score of 2
   - Round 4
   - User plays Lizard
   - CPU plays Paper
-  - User gains 1 point and now has a score of 2
+  - Computer says User gains 1 point and now has a score of 2
   - Round 5
   - User plays Spock
   - CPU plays Spock
-  - CPU and User tied
+  - Computer says CPU and User tied
   - Round 6
-  -  Wins
+  - User plays Paper
+  - CPU plays Rock
+  - Computer says User gains 1 point and now has a score of 3
+  - Computer says User wins with a score of 3
+  
