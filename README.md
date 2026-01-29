@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors, Lizard Sprock Game
+# Rock, Paper, Scissors, Lizard Spock Game
 #### By Izzy, Emma, and Tatiana
 
 ## Premise
