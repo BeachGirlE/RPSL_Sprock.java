@@ -44,4 +44,6 @@
   - CPU plays Rock
   - Computer says User gains 1 point and now has a score of 3
   - Computer says User wins with a score of 3
+  - Computer says "YAYY you won!! I'm so proud of you!!"
+  - Game ends
   
