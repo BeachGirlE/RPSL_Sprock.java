@@ -10,7 +10,7 @@ public class RPSL_Spock {
         System.out.println("Welcome " + userName + ". You are about to play a game of 'Rock, Paper, Scissors, Lizard, SPOCK!'");
 
         //Prompt user to enter a choice
-        System.out.println("Choose one of the following options: rock, paper, scissors, lizard, or Spock." +
+        System.out.println("Choose one of the following options: Rock, Paper, Scissors, Lizard, or Spock." +
                 " Please keep it in all lowercase!");
         String userMove = scanner.nextLine().toLowerCase().trim();
 

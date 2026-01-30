@@ -2,11 +2,11 @@
 #### By Izzy, Emma, and Tatiana
 
 ## Premise
-- A classic game of rock paper scissors with the addition of lizard and spock from the tv show "The Big Bang Theory."
-- Begin the first round by playing one of the five options (rock, paper, scissors, lizard, spock).
+- A classic game of rock paper scissors with the addition of lizard and Spock from the TV show "The Big Bang Theory."
+- Begin the first round by playing one of the five options (rock, paper, scissors, lizard, Spock).
 - You will receive feedback on whether you lost or won that round against the CPU
 - If you lost the CPU will receive a point, but if you won you will receive a point
-- It is a best out of five rounds, so first to three points wins
+- It is best out of five rounds, so first to three points wins
 - Winning protocols
   - Scissors cuts Paper
   - Paper covers Rock
@@ -40,4 +40,7 @@
   - CPU plays Spock
   - CPU and User tied
   - Round 6
-  -  Wins
+  - User plays Spock
+  - CPU plays Scissors
+  - User gains 1 point and now has a score of 3
+  - computer says "CONGRATS you won the game!"
