@@ -10,7 +10,7 @@ public class RPSL_Spock {
         System.out.println("Welcome " + userName + ". You are about to play a game of 'Rock, Paper, Scissors, Lizard, SPOCK!'");
 
         //Prompt user to enter a choice
-        System.out.println("Please choose one of the following options: Rock, Paper, Scissors, Lizard, or Spock." +
+        System.out.println("Choose one of the following options: rock, paper, scissors, lizard, or Spock." +
                 " Please keep it in all lowercase!");
         String userMove = scanner.nextLine().toLowerCase().trim();
 
@@ -25,7 +25,10 @@ public class RPSL_Spock {
         // write conditionals for who wins and who gains points!!
         if (userMove.equals(random)) {
             System.out.println("It's a tie");
-        } else if((userMove.equals("Scissors") && random.equals("Paper")));
+        } else{
+            System.out.println("Not a tie");
+            //((userMove.equals("Scissors") && random.equals("Paper")));
+        }
 
     }
 }
