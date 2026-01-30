@@ -2,6 +2,10 @@
 ### - Check readme for what the game is
 ## Steps and braindump
 ### 1. Print out the name of the game
+- Make sure the user knows what they are doing, and how to play
+  - how to play:
+    - They need to know what option beats what option and so forth
+    - They should also know who they are going against 
 ### 2. Make a randomizer for the computer
 - Have it randomized between rock, paper, scissor, lizard and spock for the computer to go against the user
 - Have the option that the computer gets print out when the user picks their option
