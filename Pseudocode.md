@@ -22,5 +22,3 @@
   - if computer or user wins, make it say "[user] or [computer] won, they have gained a point. 1/3"
   - Once the best out of three round ends, ask the user if they want to play again
 - Maybe allow the user to make the round max set? (this is optional)
-
-

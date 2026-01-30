@@ -6,6 +6,7 @@ public class RPSL_Spock {
         // Intro to the game:
         int userPoints = 0;
         int CPUPoints = 0;
+        boolean points = false;
         System.out.println("Please enter your name.");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
@@ -28,11 +29,11 @@ public class RPSL_Spock {
 
         // write conditionals for who wins and who gains points!!
 
-        do {
-
+        while(points); {
             if (userMove.equals(random)) {
                 System.out.println("It's a tie, no points gained.");
-            } else if
+            }
+            if
                 (userMove.equals("rock") && random.equals("scissors") ||
                         (userMove.equals("rock") && random.equals("lizard")) ||
                         (userMove.equals("paper") && random.equals("rock")) ||
@@ -45,19 +46,23 @@ public class RPSL_Spock {
                         (userMove.equals("spock") && random.equals("scissors"))) {
                 System.out.println("you win!");
                 ++userPoints;
-                System.out.println(userPoints + " - " + CPUPoints);
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
             } else {
                 System.out.println("you lost!");
                 ++CPUPoints;
-                System.out.println(userPoints + " - " + CPUPoints);
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+
+                if (userPoints == 3) {
+                    points = true;
+                    System.out.println("Winner!" + userName + " is Champion!!");
+                } else if (CPUPoints == 3) {
+                    points = true;
+                    System.out.println("Winner! The Computer has triumphed over your skill");
+                }
             }
         }
-        while(userPoints != 3 || CPUPoints != 3);
-            if (userPoints == 3) {
-                System.out.println("Winner!" + userName + " is Champion!!");
-            } else if (CPUPoints == 3) {
-                System.out.println("Winner! The Computer has triumphed over your skill");
-            }
+
+
 
         }
 
