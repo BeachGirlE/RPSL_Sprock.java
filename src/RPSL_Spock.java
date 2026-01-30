@@ -24,8 +24,6 @@ public class RPSL_Spock {
 
         int select = random.nextInt(options.length);
         System.out.println("Computer's choice: " + options[select]);
-
-
         // write conditionals for who wins and who gains points!!
 
         do {
@@ -58,7 +56,5 @@ public class RPSL_Spock {
             } else if (CPUPoints == 3) {
                 System.out.println("Winner! The Computer has triumphed over your skill");
             }
-
         }
-
     }
