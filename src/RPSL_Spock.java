@@ -1,6 +1,6 @@
-// import java.lang.String;
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
+
 public class RPSL_Spock {
     public static void main(String[] args) {
         // Intro to the game:
@@ -19,16 +19,13 @@ public class RPSL_Spock {
         String[] options = {"rock", "paper", "scissors", "lizard", "spock"};
         Random random = new Random();
 
-        // Printing everything out!!
-        int select = random.nextInt(options.length);
-        System.out.println("Computer's play: " + options[select]);
 
+        int select = random.nextInt(options.length);
+        System.out.println("Computer's choice: " + options[select]);
         // write conditionals for who wins and who gains points!!
         if (userMove.equals(random)) {
             System.out.println("It's a tie");
-        } else {
-            System.out.println("Not a tie");
-            //((userMove.equals("scissors") && random.equals("paper")));
-        }
+        } else if((userMove.equals("Scissors") && random.equals("Paper")));
+
     }
 }
