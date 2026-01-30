@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.Scanner;
-
 public class RPSL_Spock {
     public static void main(String[] args) {
         // Intro to the game:
@@ -13,22 +12,25 @@ public class RPSL_Spock {
         System.out.println("Welcome " + userName + ". You are about to play a game of 'Rock, Paper, Scissors, Lizard, SPOCK!' against the Computer >:).");
         System.out.println("You are going to start with 0 points. Gain a point after each win and first to 3 points win!");
                 System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-
-        //Prompt user to enter a choice
-        System.out.println("Choose one of the following options: Rock, Paper, Scissors, Lizard, or Spock." + " Please keep it in all lowercase!");
-        String userMove = scanner.nextLine().toLowerCase().trim();
-
+        boolean isValid = false;
+        String userMove = new String();
+        while (!isValid) {
+            try {
+                //Prompt user to enter a choice
+                System.out.println("Choose one of the following options: Rock, Paper, Scissors, Lizard, or Spock." + " Please keep it in all lowercase!");
+                userMove = scanner.nextLine().toLowerCase().trim();
+                isValid = true;
+            } catch (Exception e) {
+                System.out.println("Something went wrong, please check your input and be sure that it is a valid option");
+            }
+        }
         // Computer's input code:
         // Naming the options for String output
         String[] options = {"rock", "paper", "scissors", "lizard", "spock"};
         Random random = new Random();
-
         int select = random.nextInt(options.length);
         System.out.println("Computer's choice: " + options[select]);
-
-
         // write conditionals for who wins and who gains points!!
-
         while(points); {
             if (userMove.equals(random)) {
                 System.out.println("It's a tie, no points gained.");
@@ -51,19 +53,12 @@ public class RPSL_Spock {
                 System.out.println("you lost!");
                 ++CPUPoints;
                 System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-
                 if (userPoints == 3) {
-                    points = true;
                     System.out.println("Winner!" + userName + " is Champion!!");
                 } else if (CPUPoints == 3) {
-                    points = true;
                     System.out.println("Winner! The Computer has triumphed over your skill");
                 }
             }
         }
-
-
-
         }
-
     }
