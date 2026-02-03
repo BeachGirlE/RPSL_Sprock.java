@@ -24,6 +24,7 @@ public class RPSL_Spock {
                 System.out.println("Something went wrong, please check your input and be sure that it is a valid option");
             }
         }
+        isValid = false;
         // Computer's input code:
         // Naming the options for String output
         String[] options = {"rock", "paper", "scissors", "lizard", "spock"};
