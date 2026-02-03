@@ -49,7 +49,7 @@ public class RPSL_Spock {
                     play = false;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
                 } else {
-                    // If none of those conditionals are met, then the user loses
+                    // If none of those conditionals are met, then the user losesss
                     System.out.println("you lost!");
                     ++CPUPoints;
                     play = false;
