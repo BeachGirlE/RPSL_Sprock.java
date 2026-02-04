@@ -10,7 +10,7 @@ public class RPSL_Spock {
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
         System.out.println("Welcome " + userName + ". You are about to play a game of 'Rock, Paper, Scissors, Lizard, SPOCK!' against the Computer >:).");
-        System.out.println("You are going to start with 0 points. Gain a point after each win and first to 3 points win!");
+        System.out.println("You are going to start with 0 points. Gain a point after each win and first to 5 points win!");
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
         while(!continueGame) { // The boolean and loop for continuing the game
@@ -67,7 +67,7 @@ public class RPSL_Spock {
                     System.out.println("A random lizard sees your sketch of the landscape and suddenly craves it, you lose");
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                } else if (userMove == 3 && random == 1) {
+                } else if (userMove == 3 && random == 1 || userMove == 3 &&random == 0) {
                     System.out.println("Rock crushes scissors into a small pile of scrap metal, you lose");
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
@@ -79,7 +79,7 @@ public class RPSL_Spock {
                     System.out.println("Scissors brutally cuts off lizards head, causing it to slowly, and painfully bleed out, you lose");
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                } else if (userMove == 4 && random == 1) {
+                } else if (userMove == 4 && random == 1 || userMove == 4 && random == 0) {
                     System.out.println("Rock crushes lizard into a pancake, you lose");
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
@@ -94,14 +94,14 @@ public class RPSL_Spock {
 
                     // if user wins:
                 } else if (userMove == 1 && random == 3) {
-                    System.out.println("your scissors stop working and you decide to crush them with aa rock, you win!");
+                    System.out.println("Your scissors stop working and you decide to crush them with a rock, you win!");
                     ++userPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
                 } else if (userMove == 1 && random == 4) {
                     System.out.println("A deadly lizard starts chasing you, you see a rock and your natural instinct kicks in and you being to bash the rock onto the lizard, you win!");
                     ++userPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                } else if (userMove == 2 && random == 1) {
+                } else if (userMove == 2 && random == 1 || userMove == 2 && random == 0) {
                     System.out.println("A rock stares at you with a weird face, you get uncomfortable so you cover the rock with a sheet of paper, you win!");
                     ++userPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
@@ -129,17 +129,17 @@ public class RPSL_Spock {
                     System.out.println("Spock feels like the scissors are a threat, so he vaporizes it out of existence, you win!");
                     ++userPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                } else if (userMove == 5 && random == 1) {
-                    System.out.println("Spock also notices that the rock looks weird, so he vaporizes it, you win!");
+                } else if (userMove == 5 && random == 1 || userMove == 5 && random == 0) {
+                    System.out.println("Spock notices that the rock looks weird, so he vaporizes it, you win!");
                     ++userPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
                 }
 
                 // round system
-                if (userPoints > 0 && userPoints % 3 == 0) {
+                if (userPoints > 0 && userPoints % 5 == 0) {
                     System.out.println("Winner! " + userName + " is Champion!! Your skill is clearly more superior than this Computer's AI!!");
                     isGameOver = true;
-                } else if (CPUPoints > 0 && CPUPoints % 3 == 0) {
+                } else if (CPUPoints > 0 && CPUPoints % 5 == 0) {
                     System.out.println("Winner! The Computer has triumphed over your skill... Or cheated... >:)");
                     isGameOver = true;
                 }
@@ -149,6 +149,9 @@ public class RPSL_Spock {
             char playAgain = scanner.next().charAt(0);
             if (playAgain == 'y') {
                 System.out.println("Ok...");
+                userPoints = 0;
+                CPUPoints = 0;
+                System.out.println("Restarting score!! You: " + userPoints + " - " + CPUPoints + " :Computer");
             } else {
                 System.out.println("Thanks for PlAyInG!!");
                 continueGame = true;
