@@ -7,7 +7,6 @@ public class RPSL_Spock {
         int userPoints = 0;
         int CPUPoints = 0;
         boolean play = false;
-        boolean IsGameOver = false;
         System.out.println("Please enter your name.");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
@@ -15,46 +14,45 @@ public class RPSL_Spock {
         System.out.println("You are going to start with 0 points. Gain a point after each win and first to 3 points win!");
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
-        //Prompt user to enter a choice
-        System.out.println("Choose one of the following options: Rock, Paper, Scissors, Lizard, or Spock." + " Please keep it in all lowercase!");
-        String userMove = scanner.nextLine().toLowerCase().trim();
 
-        // Computer's input code:
-        // Naming the options for String output
-        String[] options = {"rock", "paper", "scissors", "lizard", "spock"};
-        Random random = new Random();
-
-        int select = random.nextInt(options.length);
-        System.out.println("Computer's choice: " + options[select]);
 
         // write conditionals for who wins and who gains points!!
         while (!play) {
+
+            //Prompt user to enter a choice
+            System.out.println("Choose one of the following options: 1(rock), 2(paper), 3(scissors), 4(lizard), or 5(Spock)." + "Please enter the number.");
+            int userMove = scanner.nextInt();
+
+            // Computer's input code:
+            int random = (int) (Math.random() * 6);
+            System.out.println("Computer's choice: " + random);
+            if(random == 1){
+                System.out.println("Rock");
+            }else if (random == 2) {
+                System.out.println("Paper");
+            }else if(random == 3) {
+                System.out.println("Scissors");
+            }else if(random == 4) {
+                System.out.println("Lizard");
+            }else if(random == 5) {
+                System.out.println("Spock");
+            }
             do {
-                if (userMove.equals(random)) {
+                if (userMove == random) {
                     System.out.println("It's a tie, no points gained.");
                 }
                 // The winning conditionals:
-                if (userMove.equals("rock") && random.equals("scissors") ||
-                        (userMove.equals("rock") && random.equals("lizard")) ||
-                        (userMove.equals("paper") && random.equals("rock")) ||
-                        (userMove.equals("paper") && random.equals("spock")) ||
-                        (userMove.equals("scissors") && random.equals("paper")) ||
-                        (userMove.equals("scissors") && random.equals("lizard")) ||
-                        (userMove.equals("lizard") && random.equals("paper")) ||
-                        (userMove.equals("lizard") && random.equals("spock")) ||
-                        (userMove.equals("spock") && random.equals("rock")) ||
-                        (userMove.equals("spock") && random.equals("scissors"))) {
                     System.out.println("you win!");
+                    // adds a point if user wins
                     ++userPoints;
                     play = false;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                } else {
-                    // If none of those conditionals are met, then the user losesss
+
+                    // If none of those conditionals are met, then the user loses
                     System.out.println("you lost!");
                     ++CPUPoints;
                     play = false;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                }
 
                 if (userPoints == 3) {
                     play = true;
