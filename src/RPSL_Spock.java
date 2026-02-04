@@ -12,15 +12,16 @@ public class RPSL_Spock {
         System.out.println("Welcome " + userName + ". You are about to play a game of 'Rock, Paper, Scissors, Lizard, SPOCK!' against the Computer >:).");
         System.out.println("You are going to start with 0 points. Gain a point after each win and first to 3 points win!");
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-        while(!continueGame) {
+
+        while(!continueGame) { // The boolean and loop for continuing the game
+
             boolean isGameOver = false;
-            // write conditionals for who wins and who gains points!!
-            while (!isGameOver) {
+            while (!isGameOver) { // The actual game loop
 
                 //Prompt user to enter a choice
                 System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock)." + "Please enter the number.");
                 int userMove = scanner.nextInt();
-
+                // Converts the user's number input to a word output
                 if (userMove == 1) {
                     System.out.println("Your choice: Rock");
                 } else if (userMove == 2) {
@@ -34,6 +35,7 @@ public class RPSL_Spock {
                 }
                 // Computer's input code:
                 int random = (int) (Math.random() * 6);
+                // Converts the Computers's number input to a word output
                 if (random == 1 || random == 0) {
                     System.out.println("Computer's choice: Rock");
                 } else if (random == 2) {
@@ -45,8 +47,8 @@ public class RPSL_Spock {
                 } else if (random == 5) {
                     System.out.println("Computer's choice: Spock");
                 }
-                // conditionals
-                //this part is if the computer wins
+                // write conditionals for who wins and who gains points!!
+                    //this part is if the computer wins
                 if (userMove == random) {
                     System.out.println("It's a tie, no points gained.");
                 } else if (userMove == 1 && random == 2) {
@@ -133,7 +135,6 @@ public class RPSL_Spock {
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
                 }
 
-
                 // round system
                 if (userPoints > 0 && userPoints % 3 == 0) {
                     System.out.println("Winner! " + userName + " is Champion!! Your skill is clearly more superior than this Computer's AI!!");
@@ -143,6 +144,7 @@ public class RPSL_Spock {
                     isGameOver = true;
                 }
             }
+            // Does the user want to continue playing?
             System.out.println("Would you like to play again? (y/n)");
             char playAgain = scanner.next().charAt(0);
             if (playAgain == 'y') {
