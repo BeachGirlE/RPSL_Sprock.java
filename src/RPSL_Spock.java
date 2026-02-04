@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class RPSL_Spock {
@@ -6,8 +5,7 @@ public class RPSL_Spock {
         // Intro to the game:
         int userPoints = 0;
         int CPUPoints = 0;
-        boolean play = false;
-        boolean IsGameOver = false;
+        boolean isGameOver = false;
         System.out.println("Please enter your name.");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
@@ -15,57 +13,85 @@ public class RPSL_Spock {
         System.out.println("You are going to start with 0 points. Gain a point after each win and first to 3 points win!");
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
-        //Prompt user to enter a choice
-        System.out.println("Choose one of the following options: Rock, Paper, Scissors, Lizard, or Spock." + " Please keep it in all lowercase!");
-        String userMove = scanner.nextLine().toLowerCase().trim();
-
-        // Computer's input code:
-        // Naming the options for String output
-        String[] options = {"rock", "paper", "scissors", "lizard", "spock"};
-        Random random = new Random();
-
-        int select = random.nextInt(options.length);
-        System.out.println("Computer's choice: " + options[select]);
-
         // write conditionals for who wins and who gains points!!
-        while (!play) {
-            do {
-                if (userMove.equals(random)) {
-                    System.out.println("It's a tie, no points gained.");
-                }
-                // The winning conditionals:
-                if (userMove.equals("rock") && random.equals("scissors") ||
-                        (userMove.equals("rock") && random.equals("lizard")) ||
-                        (userMove.equals("paper") && random.equals("rock")) ||
-                        (userMove.equals("paper") && random.equals("spock")) ||
-                        (userMove.equals("scissors") && random.equals("paper")) ||
-                        (userMove.equals("scissors") && random.equals("lizard")) ||
-                        (userMove.equals("lizard") && random.equals("paper")) ||
-                        (userMove.equals("lizard") && random.equals("spock")) ||
-                        (userMove.equals("spock") && random.equals("rock")) ||
-                        (userMove.equals("spock") && random.equals("scissors"))) {
-                    System.out.println("you win!");
-                    ++userPoints;
-                    play = false;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                } else {
-                    // If none of those conditionals are met, then the user losesss
-                    System.out.println("you lost!");
-                    ++CPUPoints;
-                    play = false;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                }
+        while (!isGameOver) {
 
-                if (userPoints == 3) {
-                    play = true;
-                    System.out.println("Winner!" + userName + " is Champion!!");
-                } else if (CPUPoints == 3) {
-                    play = true;
-                    System.out.println("Winner! The Computer has triumphed over your skill");
-                }
+            //Prompt user to enter a choice
+            System.out.println("Choose one of the following options: 1(rock), 2(paper), 3(scissors), 4(lizard), or 5(Spock)." + "Please enter the number.");
+            int userMove = scanner.nextInt();
 
+            // Computer's input code:
+            int random = (int) (Math.random() * 6);
+            System.out.println("Computer's choice: " + random);
+            if (random == 1) {
+                System.out.println("Rock");
+            } else if (random == 2) {
+                System.out.println("Paper");
+            } else if (random == 3) {
+                System.out.println("Scissors");
+            } else if (random == 4) {
+                System.out.println("Lizard");
+            } else if (random == 5) {
+                System.out.println("Spock");
             }
-            while (play == false);
+            // conditionals
+
+            if (userMove == random) {
+                System.out.println("It's a tie, no points gained.");
+            } else if (userMove == 1 && random == 2) {
+                System.out.println("Paper covers rock making it claustrophobic, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 1 && random == 5) {
+                System.out.println("Spock vaporizes rock, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 2 && random == 3) {
+                System.out.println("Scissors cuts paper into a snowflake, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 2 && random == 4) {
+                System.out.println("Lizard EATS paper, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 3 && random == 2) {
+                System.out.println("Rock crushes scissors into a pulp, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 3 && random == 5) {
+                System.out.println("Scissors gets smashed by Spock's fist, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 4 && random == 3) {
+                System.out.println("Scissors brutally cuts off lizards head, causing it to slowly, and painfully bleed out, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 4 && random == 1) {
+                System.out.println("Rock crushes lizard into a pancake, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 5 && random == 2) {
+                System.out.println("Paper has too much information about the mysteries of the deep ocean for spock to understand, he spontaneously combusts into a pile of goo, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else if (userMove == 5 && random == 4) {
+                System.out.println("Lizard bites stocks hand, causing an allergic reaction which makes his hand grow and grow until it explodes, you lose");
+                ++CPUPoints;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else {
+                System.out.println("You magically win!!");
+                ++userMove;
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            }
+
+            if (userPoints == 3) {
+                isGameOver = true;
+                System.out.println("Winner!" + userName + " is Champion!!");
+            } else if (CPUPoints == 3) {
+                isGameOver = true;
+                System.out.println("Winner! The Computer has triumphed over your skill");
+            }
+
 
         }
     }
