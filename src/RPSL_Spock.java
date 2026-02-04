@@ -80,7 +80,7 @@ public class RPSL_Spock {
                 System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
             } else {
                 System.out.println("You magically win!!");
-                ++userMove;
+                ++userPoints;
                 System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
             }
 
