@@ -19,7 +19,7 @@ public class RPSL_Spock {
             while (!isGameOver) { // The actual game loop
 
                 //Prompt user to enter a choice
-                System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock)." + "Please enter the number.");
+                System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
                 int userMove = scanner.nextInt();
                 // Converts the user's number input to a word output
                 if (userMove == 1) {
