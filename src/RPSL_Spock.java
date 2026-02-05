@@ -135,7 +135,7 @@ public class RPSL_Spock {
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
                 }
 
-                // round system
+                // round system:
                 if (userPoints > 0 && userPoints % 5 == 0) {
                     System.out.println("Winner! " + userName + " is Champion!! Your skill is clearly more superior than this Computer's AI!!");
                     isGameOver = true;
