@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RPSL_Spock {
@@ -9,18 +10,30 @@ public class RPSL_Spock {
         System.out.println("Please enter your name.");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
+//        int userMove = scanner.nextInt();
+        int userMove = 0;
         System.out.println("Welcome " + userName + ". You are about to play a game of 'Rock, Paper, Scissors, Lizard, SPOCK!' against the Computer >:).");
         System.out.println("You are going to start with 0 points. Gain a point after each win and first to 5 points win!");
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
-        while(!continueGame) { // The boolean and loop for continuing the game
+        while (!continueGame) { // The boolean and loop for continuing the game
 
             boolean isGameOver = false;
+            boolean isValid = false;
             while (!isGameOver) { // The actual game loop
 
-                //Prompt user to enter a choice
-                System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
-                int userMove = scanner.nextInt();
+                //Prompt user to enter a choice and validate if it is valid
+                while (!isValid) {
+                    try {
+                        System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
+                        userMove = scanner.nextInt();
+                        isValid = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Please enter a valid option");
+                        scanner.next();
+                    }
+                }
+                isValid = false;
                 // Converts the user's number input to a word output
                 if (userMove == 1) {
                     System.out.println("Your choice: Rock");
@@ -48,7 +61,7 @@ public class RPSL_Spock {
                     System.out.println("Computer's choice: Spock");
                 }
                 // write conditionals for who wins and who gains points!!
-                    //this part is if the computer wins
+                //this part is if the computer wins
                 if (userMove == random) {
                     System.out.println("It's a tie, no points gained.");
                 } else if (userMove == 1 && random == 2) {
@@ -67,7 +80,7 @@ public class RPSL_Spock {
                     System.out.println("A random lizard sees your sketch of the landscape and suddenly craves it, you lose");
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
-                } else if (userMove == 3 && random == 1 || userMove == 3 &&random == 0) {
+                } else if (userMove == 3 && random == 1 || userMove == 3 && random == 0) {
                     System.out.println("Rock crushes scissors into a small pile of scrap metal, you lose");
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
@@ -143,24 +156,20 @@ public class RPSL_Spock {
                     System.out.println("Winner! The Computer has triumphed over your skill... Or cheated... >:)");
                     isGameOver = true;
                 }
-            }
-            // Does the user want to continue playing?
-            System.out.println("Would you like to play again? (y/n)");
-            char playAgain = scanner.next().charAt(0);
-            if (playAgain == 'y') {
-                System.out.println("Ok...");
-                userPoints = 0;
-                CPUPoints = 0;
-                System.out.println("Restarting score!! You: " + userPoints + " - " + CPUPoints + " :Computer");
-            } else {
-                System.out.println("Thanks for PlAyInG!!");
-                continueGame = true;
-            }
 
-
+                // Does the user want to continue playing?
+                System.out.println("Would you like to play again? (y/n)");
+                char playAgain = scanner.next().charAt(0);
+                if (playAgain == 'y') {
+                    System.out.println("Ok...");
+                    userPoints = 0;
+                    CPUPoints = 0;
+                    System.out.println("Restarting score!! You: " + userPoints + " - " + CPUPoints + " :Computer");
+                } else {
+                    System.out.println("Thanks for PlAyInG!!");
+                    continueGame = true;
+                }
+            }
         }
-
     }
-
-
 }
