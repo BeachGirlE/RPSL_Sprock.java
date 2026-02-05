@@ -156,15 +156,11 @@ public class RPSL_Spock {
                     System.out.println("Winner! The Computer has triumphed over your skill... Or cheated... >:)");
                     isGameOver = true;
                 }
-
                 // Does the user want to continue playing?
                 System.out.println("Would you like to play again? (y/n)");
                 char playAgain = scanner.next().charAt(0);
                 if (playAgain == 'y') {
                     System.out.println("Ok...");
-                    userPoints = 0;
-                    CPUPoints = 0;
-                    System.out.println("Restarting score!! You: " + userPoints + " - " + CPUPoints + " :Computer");
                 } else {
                     System.out.println("Thanks for PlAyInG!!");
                     continueGame = true;
