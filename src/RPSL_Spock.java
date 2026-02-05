@@ -88,7 +88,7 @@ public class RPSL_Spock {
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
                 } else if (userMove == 5 && random == 4) {
-                    System.out.println("Lizard bites stocks hand, causing an allergic reaction which makes his hand grow and grow until it explodes, you lose");
+                    System.out.println("Lizard bites Spock's hand, causing an allergic reaction which makes his hand grow and grow until it explodes, you lose");
                     ++CPUPoints;
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
