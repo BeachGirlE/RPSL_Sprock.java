@@ -10,14 +10,14 @@ public class RPSL_Spock {
         System.out.println("Please enter your name.");
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.nextLine();
-//        int userMove = scanner.nextInt();
         int userMove = 0;
         System.out.println("Welcome " + userName + ". You are about to play a game of 'Rock, Paper, Scissors, Lizard, SPOCK!' against the Computer >:).");
-        System.out.println("You are going to start with 0 points. Gain a point after each win and first to 5 points win!");
+        System.out.println();
+        System.out.println("You are going to start with 0 points. Gain a point after each win and first to 3 points win!");
+        System.out.println(); // adds line so it isn't crunched together
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
         while (!continueGame) { // The boolean and loop for continuing the game
-
             boolean isGameOver = false;
             boolean isValid = false;
             while (!isGameOver) { // The actual game loop
@@ -25,7 +25,7 @@ public class RPSL_Spock {
                 //Prompt user to enter a choice and validate if it is valid
                 while (!isValid) {
                     try {
-                        System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
+                        System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (spock). Please enter the number that corresponds with your desired move.");
                         userMove = scanner.nextInt();
                         isValid = true;
                     } catch (InputMismatchException e) {
@@ -63,108 +63,137 @@ public class RPSL_Spock {
                 // write conditionals for who wins and who gains points!!
                 //this part is if the computer wins
                 if (userMove == random) {
+                    System.out.println();
                     System.out.println("It's a tie, no points gained.");
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 1 && random == 2) {
                     System.out.println("Paper covers rock making it claustrophobic, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 1 && random == 5) {
                     System.out.println("Spock vaporizes rock, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 2 && random == 3) {
                     System.out.println("Scissors cuts paper into a snowflake, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 2 && random == 4) {
                     System.out.println("A random lizard sees your sketch of the landscape and suddenly craves it, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 3 && random == 1 || userMove == 3 && random == 0) {
                     System.out.println("Rock crushes scissors into a small pile of scrap metal, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 3 && random == 5) {
-                    System.out.println("Scissors gets smashed by Spock's fist, you lose");
+                    System.out.println("Scissors gets smashed by spock's fist, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 4 && random == 3) {
                     System.out.println("Scissors brutally cuts off lizards head, causing it to slowly, and painfully bleed out, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 4 && random == 1 || userMove == 4 && random == 0) {
                     System.out.println("Rock crushes lizard into a pancake, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 5 && random == 2) {
-                    System.out.println("Paper has too much information about the mysteries of the deep ocean for Spock to understand so he spontaneously combusts into a pile of goo, you lose");
+                    System.out.println("Paper has too much information about the mysteries of the deep ocean for spock to understand so he spontaneously combusts into a pile of goo, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 5 && random == 4) {
-                    System.out.println("Lizard bites Spock's hand, causing an allergic reaction which makes his hand grow and grow until it explodes, you lose");
+                    System.out.println("Lizard bites spock's hand, causing an allergic reaction which makes his hand grow and grow until it explodes, you lose");
                     ++CPUPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
 
                     // if user wins:
                 } else if (userMove == 1 && random == 3) {
                     System.out.println("Your scissors stop working and you decide to crush them with a rock, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 1 && random == 4) {
                     System.out.println("A deadly lizard starts chasing you, you see a rock and your natural instinct kicks in and you being to bash the rock onto the lizard, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 2 && random == 1 || userMove == 2 && random == 0) {
                     System.out.println("A rock stares at you with a weird face, you get uncomfortable so you cover the rock with a sheet of paper, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 2 && random == 5) {
                     System.out.println("You finally figure out what lurks in the deep ocean, you show it to Spock but it has so much information on it that he spontaneously combusts, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 3 && random == 2) {
                     System.out.println("You get so irritated with your sibling that you decide to cut up their paper copy birth certificate with scissors, causing them to instantly disappear, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 3 && random == 4) {
                     System.out.println("You get curious to see if a lizards head will regrow just like their tail, so you grab a pair of scissors and decapitate it, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 4 && random == 2) {
                     System.out.println("You get tired of doing your math homework so you get your lizard to eat it, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 4 && random == 5) {
                     System.out.println("Spock mocks the lizard, making it so enraged that it bites Spock, causing a serious allergic reaction, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 5 && random == 3) {
                     System.out.println("Spock feels like the scissors are a threat, so he vaporizes it out of existence, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 5 && random == 1 || userMove == 5 && random == 0) {
                     System.out.println("Spock notices that the rock looks weird, so he vaporizes it, you win!");
                     ++userPoints;
-                    System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+                    System.out.println();
+                    System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 }
 
                 // round system:
-                if (userPoints > 0 && userPoints % 5 == 0) {
+                if (userPoints > 0 && userPoints % 3 == 0) {
+                    System.out.println();
                     System.out.println("Winner! " + userName + " is Champion!! Your skill is clearly more superior than this Computer's AI!!");
                     isGameOver = true;
-                } else if (CPUPoints > 0 && CPUPoints % 5 == 0) {
+                } else if (CPUPoints > 0 && CPUPoints % 3 == 0) {
+                    System.out.println();
                     System.out.println("Winner! The Computer has triumphed over your skill... Or cheated... >:)");
                     isGameOver = true;
                 }
-                // Does the user want to continue playing?
-                System.out.println("Would you like to play again? (y/n)");
-                char playAgain = scanner.next().charAt(0);
-                if (playAgain == 'y') {
-                    System.out.println("Ok...");
-                } else {
-                    System.out.println("Thanks for PlAyInG!!");
-                    continueGame = true;
-                }
+            }
+            // asks the user if they want to play again:
+            System.out.println();
+            System.out.println("Would you like to play again? (y/n)");
+            char playAgain = scanner.next().charAt(0);
+            System.out.println();
+            if (playAgain == 'y') {
+                userPoints = 0;
+                CPUPoints = 0;
+                System.out.println("Kay...");
+            } else {
+                System.out.println("Thanks for PlAyInG!!");
+                continueGame = true;
+                scanner.close(); //closes the scanner and tells the computer to stop running the code
             }
         }
     }
