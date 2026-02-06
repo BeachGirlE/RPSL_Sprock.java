@@ -1,13 +1,14 @@
 # Rock, Paper, Scissors, Lizard, Spock Game
 #### By Izzy, Emma, and Tatiana
 
-## Premise
+## Overview
 - A classic game of rock paper scissors with the addition of lizard and Spock from the TV show "The Big Bang Theory."
 - Begin the first round by playing one of the five options (rock, paper, scissors, lizard, Spock).
-- You will receive feedback on whether you lost or won that round against the CPU
-- If you lost the CPU will receive a point, but if you won you will receive a point
-- It is best out of five rounds, so first to three points wins
-- Winning protocols
+- You will receive feedback on whether you lost or won that round against the CPU.
+- If you lost the CPU will receive a point, but if you won you will receive a point.
+- It is best out of five rounds, so first to three points wins.
+  
+## Winning protocols
   - Scissors cuts Paper
   - Paper covers Rock
   - Rock crushes Lizards
@@ -18,7 +19,8 @@
   - Paper disproves Spock
   - Spock vaporizes Rock
   - Rock crushes Scissors
-- Example
+    
+## Example
   - Round 1
   - User plays Paper
   - CPU plays Lizard
@@ -44,3 +46,29 @@
   - CPU plays Scissors
   - User gains 1 point and now has a score of 3
   - computer says "CONGRATS you won the game!"
+
+## Logic:
+  - This game operates based off of loops, variables, conditionals, and random generations. The main steps can be broken down into the following broad steps:
+    - Welcome: States the name and tells the user the instructions
+    - Game Play: Randomizes the CPU's choice, covers the win-lose conditionals, point set up, and rounds
+    - Game Ending: Asks if they want to play again
+### Welcome:
+  - The code begins by initilizing the scanner and the mismatch exception.
+  - Then it asks for the user's name, so it can display the welcome message.
+### Initial Game Play:
+  - The code randomizes the CPU's choice while waiting for the user's input
+  - Once the user enter's their input it compares the two options and prints out the correct condition (win, loose, or tie)
+  - It applies the point to the correct player
+#### Input Validation:
+  - If the input is a letter it will say the input is invalid and not run the code
+  - If the input is a number other than the listed number it will not run a win conditional but it will run the computer's choice.
+### Feedback Generation:
+  - Once a valid input is entered it compares the user's guess against the CPU's randomly generated guess
+    - If the user's input meets one of the loose conditionals it prints the corresponding loose message for the inputs
+    - If the user's input meets one of the win conditionals it prints the corresponding win message for the inputs
+    - If the user's input is equal to the CPU's randomly generates choice it prints the tie conditional
+### Game Ending:
+  - If one of the players reaches three points 
+  - It asks the user if they want to play the game again
+    - If they enter y, then the score resets and they can play again
+    - If they enter n, then the game ends and the scanner stops
