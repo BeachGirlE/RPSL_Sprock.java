@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RPSL_Spock {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         // Intro to the game:
         int userPoints = 0;
         int CPUPoints = 0;
@@ -61,7 +61,7 @@ public class RPSL_Spock {
                     System.out.println("Computer's choice: Spock");
                 }
                 // write conditionals for who wins and who gains points!!
-                //this part is if the computer wins
+                    //this part is if the computer wins
                 if (userMove == random) {
                     System.out.println();
                     System.out.println("It's a tie, no points gained.");
@@ -92,7 +92,7 @@ public class RPSL_Spock {
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 3 && random == 5) {
-                    System.out.println("Scissors gets smashed by spock's fist, you lose");
+                    System.out.println("Scissors gets smashed by Spock's fist, you lose");
                     ++CPUPoints;
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
@@ -112,10 +112,12 @@ public class RPSL_Spock {
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 5 && random == 4) {
-                    System.out.println("Lizard bites spock's hand, causing an allergic reaction which makes his hand grow and grow until it explodes, you lose");
+                    System.out.println("Lizard bites Spock's hand, causing an allergic reaction which makes his hand grow and grow until it explodes, you lose");
                     ++CPUPoints;
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
+
+
 
                     // if user wins:
                 } else if (userMove == 1 && random == 3) {
