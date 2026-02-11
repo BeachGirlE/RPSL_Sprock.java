@@ -1,6 +1,6 @@
 # Pseudocode :)
 ### - Check readme for what the game is
-## Steps and braindump
+## Steps and Brain Dump
 
 ### 1. Print out the name of the game
 - Allow the user to make a name for themselves
@@ -15,25 +15,25 @@
     - such as the invalid input part of the game
 ### 3. Invalid input
 - make an invalid input so that the game will not crash in case the user types in something wrong
-  - EX: if they type a random letter or number for their option against the computer, it will print out "please choose a valid option"
+  - EX: if they type a random letter or number for their option against the computer, it will print out `Please choose a valid option!`
 ### 4. Make a randomizer for the computer
-- Have it randomized between rock, paper, scissor, lizard and spock for the computer to go against the user
+- Have it randomized between rock, paper, scissor, lizard and Spock for the computer to go against the user
 - Have the option that the computer gets print out when the user picks their option
 ### 5. Allow the computer to go against a user
 - Add in something that will make the computer wait until the user chooses their option, and types it out
 ### 6. Have the user pick an option to go against the computer(conditional)
 - If the option the user picked lost against the computer make it say "[option you picked loses against the computer]" or something like that
-  - have it say why they lost against the computer 
+  - have it says why they lost against the computer 
     - the else in what is listed below is the losing conditional.
 - If the option the user picked wins against the compute make it say "[option you picked won against the computer]" or something like that
-  - have it say why the user won against the computer
+  - have it says why the user won against the computer
 - If they tie, make it say "You have tied against the computer"
 - Make a **loop** so that it will run the conditionals until the user wins the round
 ### 7. Rounds
 - Make it so that it is best out of five round
   - if they tie, the round does not progress
   - if computer or user wins, make it say "[user] or [computer] won, they have gained a point." 
-    - "You : 1 | 0 : computer"
+    - `You : 1 - 0 : computer`
   - Once the best out of five(less or more) round ends, ask the user if they want to play again
     - or for each round ask the user if they want to go again
 ### 8. Go again?
@@ -47,4 +47,7 @@
   - Animations, or delays 
 ### 3. Add in a score tracker with the rounds
   - EX: [username]: 0, Computer: 2, ties: 5 
+### 4. Add a Try-Catch for the `continueGame` code
+  - to make sure if the user is actually putting in a `y` or `n`
+  - ### This was done!! :P
 

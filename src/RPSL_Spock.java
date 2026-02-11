@@ -1,3 +1,4 @@
+import java.lang.Exception;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -25,9 +26,13 @@ public class RPSL_Spock {
                 //Prompt user to enter a choice and validate if it is valid
                 while (!isValid) {
                     try {
-                        System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (spock). Please enter the number that corresponds with your desired move.");
+                        System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
                         userMove = scanner.nextInt();
-                        isValid = true;
+                        if (userMove == 1 || userMove == 2 || userMove == 3 || userMove == 4 || userMove == 5) {
+                            isValid = true;
+                        } else {
+                            throw new InputMismatchException("Type in a number 1-5!");
+                        }
                     } catch (InputMismatchException e) {
                         System.out.println("Please enter a valid option");
                         scanner.next();
@@ -43,7 +48,7 @@ public class RPSL_Spock {
                     System.out.println("Your choice: Scissors");
                 } else if (userMove == 4) {
                     System.out.println("Your choice: Lizard");
-                } else if (userMove == 5) {
+                } else { // doesn't need to be specified if it is 5 because it is the only valid option
                     System.out.println("Your choice: Spock");
                 }
                 // Computer's input code:
@@ -61,8 +66,8 @@ public class RPSL_Spock {
                     System.out.println("Computer's choice: Spock");
                 }
                 // write conditionals for who wins and who gains points!!
-                    //this part is if the computer wins
-                if (userMove == random) {
+                //this part is if the computer wins
+                if (userMove == random || userMove == 1 && random == 0) {
                     System.out.println();
                     System.out.println("It's a tie, no points gained.");
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
@@ -107,7 +112,7 @@ public class RPSL_Spock {
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 5 && random == 2) {
-                    System.out.println("Paper has too much information about the mysteries of the deep ocean for spock to understand so he spontaneously combusts into a pile of goo, you lose");
+                    System.out.println("Paper has too much information about the mysteries of the deep ocean for Spock to understand so he spontaneously combusts into a pile of goo, you lose");
                     ++CPUPoints;
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
@@ -116,7 +121,6 @@ public class RPSL_Spock {
                     ++CPUPoints;
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
-
 
 
                     // if user wins:
@@ -186,16 +190,31 @@ public class RPSL_Spock {
             // asks the user if they want to play again:
             System.out.println();
             System.out.println("Would you like to play again? (y/n)");
-            char playAgain = scanner.next().charAt(0);
-            System.out.println();
+            char playAgain = 'x';
+            while (!isValid) {
+                try {
+                    playAgain = scanner.next().charAt(0);
+                    if (playAgain == 'y' || playAgain == 'n') {
+                        isValid = true;
+                    } else {
+                        throw new Exception("Invalid input");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Please enter y or n!");
+                }
+            }
             if (playAgain == 'y') {
                 userPoints = 0;
                 CPUPoints = 0;
                 System.out.println("Kay...");
-            } else {
+                System.out.println("Resetting score...");
+                System.out.println();
+                System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
+            } else { // like above, it doesn't need to be specified whether it is 'n' because that is the only other valid option
                 System.out.println("Thanks for PlAyInG!!");
                 continueGame = true;
-                scanner.close(); //closes the scanner and tells the computer to stop running the code
+                scanner.close();//closes the scanner and tells the computer to stop running the code
+
             }
         }
     }
