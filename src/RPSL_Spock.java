@@ -1,13 +1,13 @@
 import java.util.Scanner; // for the actual game
 import java.util.InputMismatchException; // for the try catch for the userMove input
 import java.lang.Exception; // for the try catch for the playAgain input
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
-import java.net.URL;
+import javax.sound.sampled.AudioInputStream; // for audio input
+import javax.sound.sampled.AudioSystem; // for actual audio
+import javax.sound.sampled.Clip; // to clip the audio
+import javax.sound.sampled.LineUnavailableException; //?
+import javax.sound.sampled.UnsupportedAudioFileException; //?
+import java.io.IOException; //?
+import java.net.URL; // allow url input to be audio
 
 public class RPSL_Spock {
     static void main(String[] args) {
@@ -36,12 +36,13 @@ public class RPSL_Spock {
                     System.err.println("Sound file not found!");
                     return;
                 }
+
                 AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundUrl);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioIn);
 
                 // Play the sound (use clip.loop(Clip.LOOP_CONTINUOUSLY) for background music)
-                    clip.start();
+                clip.start();
 
                 // Keep the program alive long enough to play the sound
                 Thread.sleep(1000);
@@ -234,6 +235,7 @@ public class RPSL_Spock {
                     System.out.println("Please enter y or n!");
                 }
             }
+
             if (playAgain == 'y') {
                 userPoints = 0;
                 CPUPoints = 0;
@@ -246,7 +248,6 @@ public class RPSL_Spock {
                 System.out.println("Thanks for PlAyInG!!");
                 continueGame = true;
                 scanner.close();//closes the scanner and tells the computer to stop running the code
-
             }
         }
     }
