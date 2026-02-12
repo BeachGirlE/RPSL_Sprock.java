@@ -1,9 +1,17 @@
 import java.util.Scanner; // for the actual game
 import java.util.InputMismatchException; // for the try catch for the userMove input
 import java.lang.Exception; // for the try catch for the playAgain input
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+import java.net.URL;
 
 public class RPSL_Spock {
     static void main(String[] args) {
+
         // Intro to the game:
         int userPoints = 0;
         int CPUPoints = 0;
@@ -19,6 +27,31 @@ public class RPSL_Spock {
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
         while (!continueGame) { // The boolean and loop for continuing the game
+
+            // music, still test in progress
+            try {
+                // Get the URL of the sound file using the class loader
+                URL soundUrl = Music.class.getResource("Wii Shop Channel Main Theme (HQ).wav"); // Adjust the path as necessary
+                if (soundUrl == null) {
+                    System.err.println("Sound file not found!");
+                    return;
+                }
+
+                AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundUrl);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioIn);
+
+                // Play the sound (use clip.loop(Clip.LOOP_CONTINUOUSLY) for background music)
+                    clip.start();
+
+                // Keep the program alive long enough to play the sound
+                Thread.sleep(1000);
+
+            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException | InterruptedException e) {
+                e.printStackTrace();
+            }
+
+
             boolean isGameOver = false;
             boolean isValid = false;
             while (!isGameOver) { // The actual game loop
