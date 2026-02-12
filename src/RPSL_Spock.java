@@ -27,35 +27,34 @@ public class RPSL_Spock {
         System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
 
         while (!continueGame) { // The boolean and loop for continuing the game
-
-            // music, still test in progress
-            try {
-                // Get the URL of the sound file using the class loader
-                URL soundUrl = Music.class.getResource("Wii Shop Channel Main Theme (HQ).wav"); // Adjust the path as necessary
-                if (soundUrl == null) {
-                    System.err.println("Sound file not found!");
-                    return;
-                }
-
-                AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundUrl);
-                Clip clip = AudioSystem.getClip();
-                clip.open(audioIn);
-
-                // Play the sound (use clip.loop(Clip.LOOP_CONTINUOUSLY) for background music)
-                clip.start();
-
-                // Keep the program alive long enough to play the sound
-                Thread.sleep(1000);
-
-            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException | InterruptedException e) {
-                e.printStackTrace();
-            }
-
-
             boolean isGameOver = false;
             boolean isValid = false;
             while (!isGameOver) { // The actual game loop
                 System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
+                // music, still test in progress
+                try {
+                    // Get the URL of the sound file using the class loader
+                    URL soundUrl = RPSL_Spock.class.getResource("Wii Shop Channel Main Theme (HQ).wav"); // Adjust the path as necessary
+                    if (soundUrl == null) {
+                        System.err.println("Sound file not found!");
+                        return;
+                    }
+
+                    AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundUrl);
+                    Clip clip = AudioSystem.getClip();
+                    clip.open(audioIn);
+
+                    // Play the sound (use clip.loop(Clip.LOOP_CONTINUOUSLY) for background music)
+                    clip.start();
+
+                    // Keep the program alive long enough to play the sound
+                    Thread.sleep(1000);
+
+                } catch (UnsupportedAudioFileException | IOException | LineUnavailableException | InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
                 //Prompt user to enter a choice and validate if it is valid
                 while (!isValid) {
                     try {
@@ -235,7 +234,6 @@ public class RPSL_Spock {
                     System.out.println("Please enter y or n!");
                 }
             }
-
             if (playAgain == 'y') {
                 userPoints = 0;
                 CPUPoints = 0;
@@ -248,6 +246,7 @@ public class RPSL_Spock {
                 System.out.println("Thanks for PlAyInG!!");
                 continueGame = true;
                 scanner.close();//closes the scanner and tells the computer to stop running the code
+
             }
         }
     }
