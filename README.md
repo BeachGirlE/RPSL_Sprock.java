@@ -81,6 +81,7 @@
     - Yes! There are more efficient ways of doing it, but we did what we did.
   - The try-catch loop thingies are still in a work in progress. Here are a list of bugs that might happen:
     - When you enter a negative number, it may or may not require a space afterward.
+      - Recent discovery: just any input may require a space afterward. >:/
     - If you enter the same number twice (that is not 1-5), it won't continue unless you change the number or add a space.
     - If you type in several characters or words with spaces in between (Ex. `lkajeg iaeuy y y`), it will print out `Please type in a number 1-5!` once per word.
     - If you type in several characters or words plus one of the desired numbers that is separated by a space from any additions (Ex. `aljkheaiu 2 lkur y`) , the computer will print out `Please type in a number 1-5!` and then, since a desired number was entered, will continue the code.

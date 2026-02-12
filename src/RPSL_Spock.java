@@ -86,7 +86,7 @@ public class RPSL_Spock {
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 2 && random == 4) {
-                    System.out.println("A random lizard sees your sketch of the landscape and suddenly craves it, you lose");
+                    System.out.println("A random lizard sees your sketch of a landscape on paper and suddenly craves it, eats it, and all of a sudden the world collapses, you lose");
                     ++CPUPoints;
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
@@ -139,7 +139,7 @@ public class RPSL_Spock {
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 2 && random == 5) {
-                    System.out.println("You finally figure out what lurks in the deep ocean, you show it to Spock but it has so much information on it that he spontaneously combusts, you win!");
+                    System.out.println("You finally figure out what lurks in the deep ocean, you show it to Spock on a piece of paper but it has so much information on it that he spontaneously combusts, you win!");
                     ++userPoints;
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
