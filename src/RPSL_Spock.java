@@ -36,7 +36,6 @@ public class RPSL_Spock {
                     System.err.println("Sound file not found!");
                     return;
                 }
-
                 AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundUrl);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioIn);
