@@ -72,3 +72,17 @@
   - It asks the user if they want to play the game again
     - If they enter `y`, then the score resets and they can play again
     - If they enter `n`, then the game ends and the scanner stops
+
+
+### Challenges and Bugs:
+  - Figuring out how to loop the game if the user wants to continue was  a challenge but the least challenging of them.
+  - THE CONDITIONALS!!!!!! It took us a FOREVER to figure out a functional way to write them
+    - Yes! They are very lengthy. 
+    - Yes! There are more efficient ways of doing it, but we did what we did.
+  - The try-catch loop thingies are still in a work in progress. Here are a list of things that might happen:
+    - When you enter a negative number, it may or may not require a space afterward.
+    - If you enter the same number twice, it won't continue unless you change the number or add a space.
+    - If you type in several characters or words with spaces in between, it will print out `Please type in a number 1-5!` once per word
+
+    - ##### We are open to any suggestions as to fix these potential problems. For now...
+      - ###### deal with it

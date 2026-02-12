@@ -1,6 +1,6 @@
-import java.lang.Exception;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.Scanner; // for the actual game
+import java.util.InputMismatchException; // for the try catch for the userMove input
+import java.lang.Exception; // for the try catch for the playAgain input
 
 public class RPSL_Spock {
     static void main(String[] args) {
@@ -22,19 +22,18 @@ public class RPSL_Spock {
             boolean isGameOver = false;
             boolean isValid = false;
             while (!isGameOver) { // The actual game loop
-
+                System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
                 //Prompt user to enter a choice and validate if it is valid
                 while (!isValid) {
                     try {
-                        System.out.println("Choose one of the following options: 1 (rock), 2 (paper), 3 (scissors), 4 (lizard), or 5 (Spock). Please enter the number that corresponds with your desired move.");
                         userMove = scanner.nextInt();
                         if (userMove == 1 || userMove == 2 || userMove == 3 || userMove == 4 || userMove == 5) {
                             isValid = true;
                         } else {
-                            throw new InputMismatchException("Type in a number 1-5!");
+                            throw new InputMismatchException();
                         }
                     } catch (InputMismatchException e) {
-                        System.out.println("Please enter a valid option");
+                        System.out.println("Please type in a number 1-5!");
                         scanner.next();
                     }
                 }
@@ -190,14 +189,14 @@ public class RPSL_Spock {
             // asks the user if they want to play again:
             System.out.println();
             System.out.println("Would you like to play again? (y/n)");
-            char playAgain = 'x';
+            char playAgain = 'x'; // so there is an original "value" that can be changed
             while (!isValid) {
                 try {
                     playAgain = scanner.next().charAt(0);
                     if (playAgain == 'y' || playAgain == 'n') {
                         isValid = true;
                     } else {
-                        throw new Exception("Invalid input");
+                        throw new Exception();
                     }
                 } catch (Exception e) {
                     System.out.println("Please enter y or n!");
@@ -208,6 +207,7 @@ public class RPSL_Spock {
                 CPUPoints = 0;
                 System.out.println("Kay...");
                 System.out.println("Resetting score...");
+                System.out.println();
                 System.out.println();
                 System.out.println("You: " + userPoints + " - " + CPUPoints + " :Computer");
             } else { // like above, it doesn't need to be specified whether it is 'n' because that is the only other valid option
