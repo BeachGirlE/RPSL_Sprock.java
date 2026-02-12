@@ -1,6 +1,6 @@
 import java.util.Scanner; // for the actual game
 import java.util.InputMismatchException; // for the try catch for the userMove input
-import java.lang.Exception; // for the try catch for the playAgain input
+import java.lang.Exception; // for the try catch to specify type of input
 
 public class RPSL_Spock {
     static void main(String[] args) {
@@ -129,7 +129,7 @@ public class RPSL_Spock {
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");
                 } else if (userMove == 1 && random == 4) {
-                    System.out.println("A deadly lizard starts chasing you, you see a rock and your natural instinct kicks in and you being to bash the rock onto the lizard, you win!");
+                    System.out.println("A deadly lizard starts chasing you, you see a rock and your natural instinct kicks in and you begin to bash the rock onto the lizard, you win!");
                     ++userPoints;
                     System.out.println();
                     System.out.println("You: " + userPoints + " - " + CPUPoints + " : Computer");

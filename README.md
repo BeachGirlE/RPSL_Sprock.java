@@ -86,8 +86,7 @@
     - If you type in several characters or words with spaces in between (Ex. `lkajeg iaeuy y y`), it will print out `Please type in a number 1-5!` once per word.
     - If you type in several characters or words plus one of the desired numbers that is separated by a space from any additions (Ex. `aljkheaiu 2 lkur y`) , the computer will print out `Please type in a number 1-5!` and then, since a desired number was entered, will continue the code.
 
-    - ##### We are open to any suggestions in order to fix these potential problems. For now...
-      - ###### deal with it
+    - ##### We are open to any suggestions in order to fix these potential problems.
   - In case you were wondering... the reason we have the score reset if you play again is because of how we have our `isGameOver` conditional written. 
     - If the score doesn't reset, then the game will stop you after each round once the conditional is met. Again, we did what we did and since it is functional and works, that's what we are going with. 
       - :)
